@@ -9,11 +9,12 @@
 #define ENC_COUNT_REV 620
  
 // Encoder output to Arduino Interrupt pin. Tracks the pulse count.
-#define ENC_IN_RIGHT_A 2
+#define ENC_IN_RIGHT_A 3
+#define ENC_IN_LEFT_A 3
  
 // Other encoder output to Arduino to keep track of wheel direction
 // Tracks the direction of rotation.
-#define ENC_IN_RIGHT_B 4
+#define ENC_IN_RIGHT_B 7
  
 // True = Forward; False = Reverse
 boolean Direction_right = true;
@@ -41,7 +42,7 @@ const float rad_to_deg = 57.29578;
 void setup() {
  
   // Open the serial port at 9600 bps
-  Serial.begin(9600); 
+  Serial.begin(9600);
  
   // Set pin states of the encoder
   pinMode(ENC_IN_RIGHT_A , INPUT_PULLUP);
